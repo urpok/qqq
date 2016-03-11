@@ -1,3 +1,8 @@
 .frm1 {
 	text-align: center;
 }
+ul img {
+	height: 300px;
+	width: auto;
+	max-width: 300px;
+}
