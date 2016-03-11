@@ -1,6 +1,7 @@
 function funcInData() {
 var ex = document.getElementById("innerData").value;
-var li = document.createElement('img');
-li.src = ex;
-list.appendChild(li);
+var pic = document.createElement('img');
+pic.src = ex;
+list.appendChild(pic);
+pic.className('smallImg');
 };
