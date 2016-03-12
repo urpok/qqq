@@ -6,20 +6,18 @@ document.getElementById("maxList").style.height = h + "px";
 console.log(w+" "+h);
 
 function funcInData() {
-var ex = document.getElementById("innerData").value;
-var wideCount = counter*310;
-
-//document.getElementById("maxList").style.maxWidth = w + "px";
-//document.getElementById("maxList").style.height = h + "px";
-
-if (wideCount<w){
+	var wideCount = counter*310;
+if ((wideCount+310)<w){
+	counter++;
+} else {
+	document.getElementById("list").style.height = 610 + "px";
+}
+	var ex = document.getElementById("innerData").value;
 	document.getElementById("list").style.width = wideCount + "px";
 	var pic = document.createElement('img');
 	pic.src = ex;
 	list.appendChild(pic);
 	pic.className = 'smallImg';
-	counter++;
-} else {
-	document.getElementById("list").style.height = 610 + "px";
-}
+
+
 };
