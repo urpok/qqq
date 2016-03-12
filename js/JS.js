@@ -15,9 +15,21 @@ if ((wideCount+310)<w){														//проверяем ширину экра�
 	var ex = document.getElementById("innerData").value;					//записываем значение формы ввода в переменную	
 	document.getElementById("list").style.width = wideCount + "px";			//задаем ширину div для отображения картинки
 	var pic = document.createElement('img');								//создаем елемент отображения картинки
+	
 	pic.src = ex;															//задаем значение формы
 	list.appendChild(pic);													//вставляем в div(id='list') нашу картинку
 	pic.className = 'smallImg';												//задаем класс для css свойств
-
-
+	pic.setAttribute('ondblclick', 'clickTwo()');
+	pic.setAttribute('onclick', 'clickOne()');
 };
+
+var timer;																	//таймер на обработку одинарного или двойного
+function clickOne() {
+    timer = setTimeout(function() {
+    alert('has clicked 1');
+    }, 300)
+}
+function clickTwo() {
+    clearTimeout(timer);
+    alert('has clicked 2');
+}
