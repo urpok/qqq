@@ -1,23 +1,23 @@
 var counter=1;
-var w = window.innerWidth;
-var h = window.innerHeight;
-document.getElementById("maxList").style.width = w + "px";
+var w = window.innerWidth;													//определяем ширину экрана
+var h = window.innerHeight;													//* высоту экрана
+document.getElementById("maxList").style.width = w + "px";					//назначаем макс размеры робочего окна
 document.getElementById("maxList").style.height = h + "px";
-console.log(w+" "+h);
+console.log(w+" "+h);														//отладочная инфа (удалить)
 
-function funcInData() {
-	var wideCount = counter*310;
-if ((wideCount+310)<w){
-	counter++;
-} else {
-	document.getElementById("list").style.height = 610 + "px";
+function funcInData() {														//при нажатии кнопки вызываеться фукция
+	var wideCount = counter*310;											//счетчик задает ширину для div - отображения рисунка
+if ((wideCount+310)<w){														//проверяем ширину экрана и задаем счетчик
+	counter++;																//если ширина div'а+1елемент больше ширины экрана то 
+} else {																	//добавить высоту
+	document.getElementById("list").style.height = 610 + "px";				
 }
-	var ex = document.getElementById("innerData").value;
-	document.getElementById("list").style.width = wideCount + "px";
-	var pic = document.createElement('img');
-	pic.src = ex;
-	list.appendChild(pic);
-	pic.className = 'smallImg';
+	var ex = document.getElementById("innerData").value;					//записываем значение формы ввода в переменную	
+	document.getElementById("list").style.width = wideCount + "px";			//задаем ширину div для отображения картинки
+	var pic = document.createElement('img');								//создаем елемент отображения картинки
+	pic.src = ex;															//задаем значение формы
+	list.appendChild(pic);													//вставляем в div(id='list') нашу картинку
+	pic.className = 'smallImg';												//задаем класс для css свойств
 
 
 };
