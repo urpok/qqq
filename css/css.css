@@ -18,3 +18,14 @@ form {
 .smallImg:hover {
 	border-color: blue;
 }
+#maxList {
+
+
+}
+#list {
+	margin-left: -155px;
+    margin-top: -145px;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+}
