@@ -1,4 +1,5 @@
 var counter=1;
+var coun=1;
 var w = window.innerWidth;													//определяем ширину экрана
 var h = window.innerHeight;													//* высоту экрана
 document.getElementById("maxList").style.width = w + "px";					//назначаем макс размеры робочего окна
@@ -21,15 +22,25 @@ if ((wideCount+310)<w){														//проверяем ширину экра�
 	pic.className = 'smallImg';												//задаем класс для css свойств
 	pic.setAttribute('ondblclick', 'clickTwo()');
 	pic.setAttribute('onclick', 'clickOne()');
+	pic.setAttribute('id', coun);
+	coun++;
 };
+//var pic1 = document.getElementsByClassName('smallImg');
 
 var timer;																	//таймер на обработку одинарного или двойного
+
 function clickOne() {
-    timer = setTimeout(function() {
-    alert('has clicked 1');
-    }, 300)
+	timer = setTimeout(function() {
+		list.onclick = function() { 
+      		var mo= event.target.src;
+      		console.log(mo); 
+ 		} 
+	}, 400)
 }
 function clickTwo() {
     clearTimeout(timer);
-    alert('has clicked 2');
+    alert('element deleted');
+    //console.log(pic1);
 }
+
+
