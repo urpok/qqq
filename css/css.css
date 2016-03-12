@@ -1,9 +1,25 @@
+body {
+	background-color: gray;
+}
+form {
+	padding-bottom: 10px;
+}
 .frm1 {
 	text-align: center;
 }
 .smallImg {
-	max-height: 300px;
-	max-width: 300px;
+	height: 300px;
+	width: 300px;
 	padding: 0;
-	margin: 0 auto;
+	margin: 0 2px;
+	border-radius: 15px;
+	border: 2px solid white;
+}
+.smallImg:hover {
+	border-color: blue;
+}
+#list {
+	height: 300px;
+	width: 308px;
+	margin: auto;
 }
