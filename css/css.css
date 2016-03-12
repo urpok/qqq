@@ -18,8 +18,3 @@ form {
 .smallImg:hover {
 	border-color: blue;
 }
-#list {
-	height: 300px;
-	width: 308px;
-	margin: auto;
-}

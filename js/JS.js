@@ -11,4 +11,5 @@ pic.className = 'smallImg';
 var wideCount = counter*308;
 counter++;
 document.getElementById("list").style.width = wideCount + "px";
+document.getElementById("list").setAttribute("style", "margin-top:" + (h/4) + "px");
 };
