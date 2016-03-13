@@ -42,13 +42,13 @@ function clickOne() {
       		pic1.setAttribute('id', 'bigImgId');
       		pic1.setAttribute('max-width', (w-100));
       		pic1.setAttribute('max-height', (h-100));
+      		pic1.setAttribute('onclick', 'turnOff()');
       		document.getElementById("viewPic").style.display = "inline-block";
       		var realH = document.getElementById('bigImgId').naturalHeight;
       		var realW = document.getElementById('bigImgId').naturalWidth;
       		document.getElementById("viewPic2").style.width = realW + "px";
 			document.getElementById("viewPic2").style.height = realH + "px";
-      		
- 		} 
+      	} 
 	}, 300);
 }
 function clickTwo() {
@@ -57,4 +57,9 @@ function clickTwo() {
     //console.log(pic1);
 }
 
-
+function turnOff(){
+	document.getElementById("viewPic").style.display = "none";
+	var card = document.getElementById("bigImgId");
+	card.parentNode.removeChild(card);
+	clickOne();
+};
