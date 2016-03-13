@@ -55,7 +55,7 @@ function clickOne() {
 function clickTwo() {
     clearTimeout(timer);
     list.ondblclick = function() { 
-      		var mo= event.target.id;
+    var mo= event.target.id;
     var card1 = document.getElementById(mo);
 	card1.parentNode.removeChild(card1);
     console.log(mo);
