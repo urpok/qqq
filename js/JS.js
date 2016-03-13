@@ -4,6 +4,8 @@ var w = window.innerWidth;													//определяем ширину эк�
 var h = window.innerHeight;													//* высоту экрана
 document.getElementById("maxList").style.width = w + "px";					//назначаем макс размеры робочего окна
 document.getElementById("maxList").style.height = h + "px";
+document.getElementById("viewPic").style.width = w + "px";
+document.getElementById("viewPic").style.height = h + "px";
 console.log(w+" "+h);														//отладочная инфа (удалить)
 
 function funcInData() {														//при нажатии кнопки вызываеться фукция
@@ -25,7 +27,7 @@ if ((wideCount+310)<w){														//проверяем ширину экра�
 	pic.setAttribute('id', coun);
 	coun++;
 };
-//var pic1 = document.getElementsByClassName('smallImg');
+
 
 var timer;																	//таймер на обработку одинарного или двойного
 
@@ -33,9 +35,21 @@ function clickOne() {
 	timer = setTimeout(function() {
 		list.onclick = function() { 
       		var mo= event.target.src;
-      		console.log(mo); 
+      		var pic1 = document.createElement('img');
+      		pic1.src = mo;
+      		viewPic2.appendChild(pic1);
+      		pic1.className = 'bigImg';
+      		pic1.setAttribute('id', 'bigImgId');
+      		pic1.setAttribute('max-width', (w-100));
+      		pic1.setAttribute('max-height', (h-100));
+      		document.getElementById("viewPic").style.display = "inline-block";
+      		var realH = document.getElementById('bigImgId').naturalHeight;
+      		var realW = document.getElementById('bigImgId').naturalWidth;
+      		document.getElementById("viewPic2").style.width = realW + "px";
+			document.getElementById("viewPic2").style.height = realH + "px";
+      		
  		} 
-	}, 400)
+	}, 300);
 }
 function clickTwo() {
     clearTimeout(timer);

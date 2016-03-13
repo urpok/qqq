@@ -31,6 +31,7 @@ form {
     top: 32px;
     left: 0;
     overflow: auto;
+    
 }
 #list {
 	width: 310px;
@@ -41,14 +42,28 @@ form {
 	bottom: 0;
 	left: 0;
 	margin: auto;
+	z-index: 1;
 }
-.viewPic {
-	position: fixed;
-	width: 100%;
-	height: 100%;
+#viewPic {
+	position: absolute;
 	background-color: rgba(0,0,0,.7);
-	z-index: 50;
+	z-index: 150;
+	left: 0;
+	top: -32px;
 	right: 0;
-	top: 0;
+	bottom: 0;
+	margin: auto;
+	overflow: auto;
 	display: none;
+}
+
+#viewPic2 {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto; 	
 }
