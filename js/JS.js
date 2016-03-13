@@ -49,17 +49,22 @@ function clickOne() {
       		document.getElementById("viewPic2").style.width = realW + "px";
 			document.getElementById("viewPic2").style.height = realH + "px";
       	} 
-	}, 300);
+	}, 400);
+	return;
 }
 function clickTwo() {
     clearTimeout(timer);
-    alert('element deleted');
-    //console.log(pic1);
-}
-
+    list.ondblclick = function() { 
+      		var mo= event.target.id;
+    var card1 = document.getElementById(mo);
+	card1.parentNode.removeChild(card1);
+    console.log(mo);
+    return;
+};
+};
 function turnOff(){
 	document.getElementById("viewPic").style.display = "none";
 	var card = document.getElementById("bigImgId");
 	card.parentNode.removeChild(card);
-	clickOne();
+	return;
 };
