@@ -22,8 +22,8 @@ if ((wideCount+310)<w){														//проверяем ширину экра�
 	pic.src = ex;															//задаем значение формы
 	list.appendChild(pic);													//вставляем в div(id='list') нашу картинку
 	pic.className = 'smallImg';												//задаем класс для css свойств
-	pic.setAttribute('ondblclick', 'clickTwo()');
-	pic.setAttribute('onclick', 'clickOne()');
+	pic.setAttribute('ondblclick', 'clickTwo(event)');
+	pic.setAttribute('onclick', 'clickOne(event)');
 	pic.setAttribute('id', coun);
 	coun++;
 };
@@ -31,9 +31,9 @@ if ((wideCount+310)<w){														//проверяем ширину экра�
 
 var timer;																	//таймер на обработку одинарного или двойного
 
-function clickOne() {
+function clickOne(event) {
 	timer = setTimeout(function() {
-		list.onclick = function() { 
+		//list.onclick = function(event) { 
       		var mo= event.target.src;
       		var pic1 = document.createElement('img');
       		pic1.src = mo;
@@ -48,19 +48,19 @@ function clickOne() {
       		var realW = document.getElementById('bigImgId').naturalWidth;
       		document.getElementById("viewPic2").style.width = realW + "px";
 			document.getElementById("viewPic2").style.height = realH + "px";
-      	} 
+      	//} 
 	}, 400);
 	return;
 }
 function clickTwo() {
     clearTimeout(timer);
-    list.ondblclick = function() { 
+    //list.ondblclick = function(event) { 
     var mo= event.target.id;
     var card1 = document.getElementById(mo);
 	card1.parentNode.removeChild(card1);
     console.log(mo);
     return;
-};
+//};
 };
 function turnOff(){
 	document.getElementById("viewPic").style.display = "none";
